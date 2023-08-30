@@ -12,7 +12,7 @@ services:
     privileged: true
     container_name: jupyter-datascience_notebook
     ports:
-      - '8500:80'
+      - '7500:8888'
     environment:
       TZ: Asia/Tokyo
     cap_add:
@@ -21,4 +21,5 @@ services:
       - seccomp:unconfined
     volumes:
       - /home/nibiohnproj9/chikamori/data:/home/nibiohnproj9/chikamori/data
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
 
